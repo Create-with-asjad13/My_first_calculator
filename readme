@@ -1,0 +1,74 @@
+# Calcula — Web Calculator
+
+Calcula is a calculator that runs in the browser, built with plain HTML, CSS and JavaScript. It has no frameworks, libraries or build tools, and it does not use `eval()`.
+
+I built this project to practice DOM manipulation, event handling, state management and responsive design, and to make something that looks and feels like a real app.
+
+## About the Project
+
+The calculator handles everyday arithmetic and keeps a record of every calculation you make. It works with mouse, touch or keyboard, and it fits both desktop and mobile screens. Users can switch between a dark and a light theme, and their choice is remembered.
+
+## Features
+
+- **Basic operations:** addition, subtraction, multiplication and division
+- **Percentage (%):** works in context, so `200 + 10%` adds 20 to 200
+- **Square (x²):** squares the number on the display
+- **Power (xʸ):** raises a number to any power, for example `2 ^ 10 = 1024`
+- **Equals (=):** calculates the result and supports chained operations
+- **Calculation history:** stores the last 50 calculations, keeps them after the page is refreshed, and lets you click an entry to reuse its result
+- **Keyboard support:** digits, operators, `Enter`, `Backspace` and `Esc` all work
+- **Light and dark themes:** follows your system preference by default
+- **Error handling:** division by zero and overly large results show a clear message
+- **Accurate decimals:** `0.1 + 0.2` shows `0.3` instead of `0.30000000000000004`
+
+## Technologies Used
+
+| Technology | Purpose |
+| --- | --- |
+| HTML5 | Page structure and buttons |
+| CSS3 | Layout (Grid and Flexbox), themes, glass effect, animations |
+| JavaScript (ES6+) | Calculator logic, history, keyboard input, theme switching |
+| localStorage | Saving history and theme choice in the browser |
+
+## Project Structure
+
+```
+calcula/
+├── index.html   # Page structure
+├── style.css    # Styling, themes and animations
+├── script.js    # Calculator logic and history
+└── README.md    # Project description
+```
+
+## How It Works
+
+Instead of building a text expression and evaluating it, the calculator keeps track of three things: the current number, the previous number and the selected operator. When you press an operator or equals, it calculates the result from those values. This keeps the calculator safe, predictable and easy to extend. Results are rounded to 12 significant digits to avoid floating-point errors.
+
+## How to Run
+
+1. Download or clone this repository.
+2. Open `index.html` in any modern web browser.
+
+No installation is needed.
+
+## Keyboard Shortcuts
+
+| Key | Action |
+| --- | --- |
+| `0`–`9`, `.` | Enter numbers |
+| `+` `-` `*` `/` | Operators |
+| `^` | Power |
+| `%` | Percentage |
+| `Enter` or `=` | Equals |
+| `Backspace` | Delete last digit |
+| `Esc` | Clear everything |
+
+## Possible Future Improvements
+
+- Scientific functions (square root, trigonometry, logarithms)
+- Copy result to clipboard
+- Export history as a file
+
+## Author
+
+Made by **<Your Name>**

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern calculator with history, keyboard support and light/dark themes." />
+  <title>Calcula · Modern Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Calculator -->
+    <section class="calculator" aria-label="Calculator">
+      <header class="calc-header">
+        <h1>Calcula</h1>
+        <div class="header-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+          <button class="icon-btn" id="historyToggle" aria-label="Toggle history" title="History">🕘</button>
+        </div>
+      </header>
+
+      <div class="display" aria-live="polite">
+        <div class="expression" id="expression"></div>
+        <div class="result" id="result">0</div>
+      </div>
+
+      <div class="keys">
+        <button class="key fn" data-action="clear">AC</button>
+        <button class="key fn" data-action="backspace" aria-label="Backspace">⌫</button>
+        <button class="key fn" data-action="percent">%</button>
+        <button class="key op" data-action="operator" data-op="/">÷</button>
+
+        <button class="key fn" data-action="square">x²</button>
+        <button class="key fn" data-action="operator" data-op="^">xʸ</button>
+        <button class="key fn" data-action="negate">±</button>
+        <button class="key op" data-action="operator" data-op="*">×</button>
+
+        <button class="key" data-action="digit" data-digit="7">7</button>
+        <button class="key" data-action="digit" data-digit="8">8</button>
+        <button class="key" data-action="digit" data-digit="9">9</button>
+        <button class="key op" data-action="operator" data-op="-">−</button>
+
+        <button class="key" data-action="digit" data-digit="4">4</button>
+        <button class="key" data-action="digit" data-digit="5">5</button>
+        <button class="key" data-action="digit" data-digit="6">6</button>
+        <button class="key op" data-action="operator" data-op="+">+</button>
+
+        <button class="key" data-action="digit" data-digit="1">1</button>
+        <button class="key" data-action="digit" data-digit="2">2</button>
+        <button class="key" data-action="digit" data-digit="3">3</button>
+        <button class="key equals" data-action="equals">=</button>
+
+        <button class="key zero" data-action="digit" data-digit="0">0</button>
+        <button class="key" data-action="decimal">.</button>
+      </div>
+    </section>
+
+    <!-- History -->
+    <aside class="history" id="history" aria-label="Calculation history">
+      <div class="history-header">
+        <h2>History</h2>
+        <button class="text-btn" id="clearHistory">Clear</button>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+      <p class="history-empty" id="historyEmpty">No calculations yet.<br />Try 12 × 8 =</p>
+    </aside>
+
+  </main>
+
+  <footer class="footer">
+    Tip: use your keyboard — digits, <kbd>+ − * /</kbd>, <kbd>Enter</kbd>, <kbd>Backspace</kbd>, <kbd>Esc</kbd>, <kbd>%</kbd>, <kbd>^</kbd>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
